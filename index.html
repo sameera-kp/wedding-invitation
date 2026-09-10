@@ -9,7 +9,7 @@
         :root {
             --primary-gold: #c5a059;
             --dark-text: #2c2a29;
-            --light-text: #555555;
+            --light-text: #ffffff;
             --accent-border: rgba(197, 160, 89, 0.4);
         }
 
@@ -21,16 +21,16 @@
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
-            color: var(--dark-text);
+            color: var(--light-text);
             scroll-behavior: smooth;
             overflow-x: hidden;
             width: 100%;
-            /* Global Fixed Background Image */
-            background-image: url('inv-image5.jpg');
+            background-image: url('inv.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
+            background-color: #000;
         }
 
         /* --- INTRO / COVER PAGE --- */
@@ -69,7 +69,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 2;
         }
 
@@ -82,7 +82,7 @@
         }
 
         .open-btn {
-            background-color: #c5a059;
+            background-color: var(--primary-gold);
             color: #fff;
             border: none;
             padding: 14px 35px;
@@ -143,85 +143,74 @@
             color: var(--primary-gold);
         }
 
-        /* Section Layouts */
+        /* Section Layouts (No Containers) */
         section {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 70px 15px 30px 15px;
+            padding: 80px 20px 40px 20px;
             text-align: center;
         }
 
-        /* Fully Responsive Glassmorphism Card */
-        .container {
-            width: 100%;
-            max-width: 380px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.18);
-            padding: 20px 15px;
-            border-radius: 18px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.35);
-        }
-
-        /* Cover Section */
+        /* Card Elements */
         .cover-title {
-            font-size: 10px;
-            letter-spacing: 2px;
+            font-size: 11px;
+            letter-spacing: 3px;
             color: #ffffff;
             text-transform: uppercase;
-            margin-bottom: 6px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-        }
-        .couple-names {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
-            font-weight: 600;
-            color: #ffffff;
-            margin: 4px 0;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-        }
-        .wedding-date {
-            font-size: 11px;
-            letter-spacing: 2px;
-            color: var(--primary-gold);
-            margin-bottom: 12px;
-            font-weight: 600;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
         
-        .video-frame {
-            width: 100%;
-            height: 280px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            background: #eee;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255,255,255,0.3);
+        .couple-names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 5px 0;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.8);
         }
 
-        .video-frame video {
+        .wedding-date {
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        .media-frame {
+            width: 100%;
+            max-width: 360px;
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+            margin: 15px auto;
+            border: 1px solid var(--accent-border);
+        }
+
+        .media-frame video, .media-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .rectangle-video-container {
+        .rectangle-video-frame {
             width: 100%;
-            height: 350px;
-            border-radius: 10px;
+            max-width: 390px;
+            height: 400px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            background: #000;
-            margin-top: 10px;
-            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+            margin: 15px auto;
+            border: 1px solid var(--accent-border);
         }
 
-        .rectangle-video-container video {
+        .rectangle-video-frame video {
             width: 100%;
             height: 100%;
             object-fit: cover; 
@@ -231,149 +220,127 @@
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 6px;
-            margin: 12px 0;
+            gap: 8px;
+            margin: 15px 0;
         }
+        
         .countdown-box {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.6);
             border: 1px solid var(--accent-border);
-            padding: 6px 4px;
-            border-radius: 6px;
-            min-width: 50px;
-            backdrop-filter: blur(4px);
+            padding: 8px 6px;
+            border-radius: 8px;
+            min-width: 55px;
         }
+        
         .countdown-number {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
             color: #ffffff;
             display: block;
         }
+        
         .countdown-label {
-            font-size: 6px;
+            font-size: 7px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #f0f0f0;
-            margin-top: 2px;
+            margin-top: 3px;
             display: block;
         }
 
         .welcome-text {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 14px;
+            font-size: 15px;
             color: #ffffff;
-            margin-bottom: 12px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            margin: 15px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
         .btn {
             display: inline-block;
             background: var(--primary-gold);
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 10px 25px;
             border-radius: 30px;
             text-decoration: none;
-            font-size: 9px;
+            font-size: 10px;
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: background 0.3s;
             font-weight: 600;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            border: none;
+            cursor: pointer;
         }
+        
         .btn:hover {
             background: #d4b26f;
         }
 
         .scroll-down-hint {
-            margin-top: 12px;
-            font-size: 8px;
-            letter-spacing: 1px;
+            margin-top: 20px;
+            font-size: 9px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--primary-gold);
             animation: bounce 2s infinite;
             font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-4px);}
-            60% {transform: translateY(-2px);}
+            40% {transform: translateY(-5px);}
+            60% {transform: translateY(-3px);}
         }
 
-        /* Our Story Section */
         .section-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            margin-bottom: 12px;
-            color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--primary-gold);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
         }
+
         .story-grid {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-        }
-        .story-card {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid var(--accent-border);
-            backdrop-filter: blur(4px);
-        }
-        .story-card img {
+            gap: 20px;
             width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 6px;
-        }
-        .story-card p {
-            font-size: 10px;
-            color: #f0f0f0;
-            line-height: 1.4;
-            margin: 0;
+            max-width: 320px;
         }
 
-        /* Details & Venue Section */
-        .details-box {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--accent-border);
-            padding: 15px;
-            border-radius: 8px;
-            width: 100%;
-            backdrop-filter: blur(4px);
-        }
-        .details-box h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
-            color: var(--primary-gold);
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-        .details-box p {
+        .story-item p {
             font-size: 11px;
-            line-height: 1.4;
             color: #f0f0f0;
-            margin: 0 0 10px 0;
+            line-height: 1.5;
+            margin: 8px 0 0 0;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
 
         /* RSVP Form */
         form {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 12px;
             width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
         }
+        
         input, select, textarea {
             width: 100%;
-            padding: 9px;
+            padding: 10px;
             border: 1px solid var(--accent-border);
-            border-radius: 6px;
+            border-radius: 8px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
+            font-size: 11px;
             background: rgba(255, 255, 255, 0.9);
+            color: #000;
         }
+        
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--primary-gold);
@@ -382,21 +349,21 @@
         /* Floating Music Toggle Button */
         #music-toggle {
             position: fixed;
-            bottom: 15px;
-            right: 15px;
+            bottom: 20px;
+            right: 20px;
             background: var(--primary-gold);
             color: white;
             border: 2px solid #ffffff;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
             z-index: 99999;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            font-size: 18px;
         }
     </style>
 </head>
@@ -427,119 +394,119 @@
         <a href="#rsvp">RSVP</a>
     </nav>
 
+    <!-- Home Section -->
     <section id="home">
-        <div class="container">
-            <div class="cover-title">The Wedding of</div>
-            <h1 class="couple-names">Fajar & Yeyen</h1>
-            <div class="wedding-date">NOVEMBER 15, 2026</div>
-            
-            <div class="video-frame">
-                <video autoplay muted loop playsinline>
-                    <source src="inv-vedio.mp4" type="video/mp4">
-                </video>
-            </div>
+        <div class="cover-title">The Wedding of</div>
+        <h1 class="couple-names">Rshid & Fathima</h1>
+        <div class="wedding-date">NOVEMBER 15, 2026</div>
+        
+        <div class="media-frame">
+            <video autoplay muted loop playsinline>
+                <source src="inv-vedio.mp4" type="video/mp4">
+            </video>
+        </div>
 
-            <div class="countdown-container">
-                <div class="countdown-box">
-                    <span id="days" class="countdown-number">00</span>
-                    <span class="countdown-label">Days</span>
-                </div>
-                <div class="countdown-box">
-                    <span id="hours" class="countdown-number">00</span>
-                    <span class="countdown-label">Hours</span>
-                </div>
-                <div class="countdown-box">
-                    <span id="minutes" class="countdown-number">00</span>
-                    <span class="countdown-label">Mins</span>
-                </div>
-                <div class="countdown-box">
-                    <span id="seconds" class="countdown-number">00</span>
-                    <span class="countdown-label">Secs</span>
-                </div>
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <span id="days" class="countdown-number">00</span>
+                <span class="countdown-label">Days</span>
             </div>
+            <div class="countdown-box">
+                <span id="hours" class="countdown-number">00</span>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-box">
+                <span id="minutes" class="countdown-number">00</span>
+                <span class="countdown-label">Mins</span>
+            </div>
+            <div class="countdown-box">
+                <span id="seconds" class="countdown-number">00</span>
+                <span class="countdown-label">Secs</span>
+            </div>
+        </div>
 
-            <p class="welcome-text">"Join us for a day filled with laughter, love, and cherished memories."</p>
-            <a href="#special-video" class="btn">Explore More</a>
-            
-            <div class="scroll-down-hint">↓ Scroll Down For Details ↓</div>
+        <p class="welcome-text">"Join us for a day filled with laughter, love, and cherished memories."</p>
+        <a href="#special-video" class="btn">Explore More</a>
+        <div class="scroll-down-hint">↓ Scroll Down For Details ↓</div>
+    </section>
+
+    <!-- Video Section 1 -->
+    <section>
+        <div class="media-frame">
+            <video autoplay muted loop playsinline>
+                <source src="inv-video.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
-    <!-- New Special Video Section -->
-    <section id="special-video" class="video-section">
-        <div class="container">
-            <h2 class="section-title">Our Special Moment</h2>
-            <div class="rectangle-video-container">
-                <video autoplay muted loop playsinline>
-                    <source src="inv-vedio3.mp4" type="video/mp4">
-                </video>
-            </div>
+    <!-- Special Video Section -->
+    <section id="special-video">
+        <h2 class="section-title">Our Special Moment</h2>
+        <div class="rectangle-video-frame">
+            <video autoplay muted loop playsinline>
+                <source src="inv-vedio3.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
+    <!-- Story Section -->
     <section id="story">
-        <div class="container">
-            <h2 class="section-title">Our Story</h2>
-            <div class="story-grid">
-                <div class="story-card">
+        <h2 class="section-title">Our Story</h2>
+        <div class="story-grid">
+            <div class="story-item">
+                <div class="media-frame" style="height: 350px; margin-bottom: 10px;">
                     <img src="inv-image1.jpg" alt="First Meet">
-                    <p><strong>How We Met</strong><br>A beautiful journey began with a simple smile and shared moments.</p>
                 </div>
-                <div class="story-card">
-                    <img src="inv-image2.jpg" alt="The Engagement"> 
-                    <p><strong>The Proposal</strong><br>Where we decided to hold hands for a lifetime together.</p>
+                <p><strong>How We Met</strong><br>A beautiful journey began with a simple smile and shared moments.</p>
+            </div>
+            <div class="story-item">
+                <div class="media-frame" style="height: 350px; margin-bottom: 10px;">
+                    <img src="inv-image2.jpg" alt="The Engagement">
                 </div>
+                <p><strong>The Proposal</strong><br>Where we decided to hold hands for a lifetime together.</p>
             </div>
         </div>
     </section>
 
+    <!-- Timeline Section -->
     <section id="schedule">
-        <div class="container">
-            <h2 class="section-title">Wedding Timeline</h2>
-            <div class="rectangle-video-container">
-                <video autoplay muted loop playsinline>
-                    <source src="inv-video9.mp4" type="video/mp4">
-                </video>
-            </div>
+        <h2 class="section-title">Wedding Timeline</h2>
+        <div class="rectangle-video-frame">
+            <video autoplay muted loop playsinline>
+                <source src="inv-video9.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
+    <!-- Venue Section -->
     <section id="venue">
-        <div class="container">
-            <h2 class="section-title">Location & Venue</h2>
-            <div class="details-box">
-                <h3>Grand Palace Hall</h3>
-                <p>Marine Drive, Ernakulam, Kerala</p>
-                <a href="https://maps.google.com" target="_blank" class="btn">Get Directions</a>
-            </div>
-        </div>
+        <h2 class="section-title">Location & Venue</h2>
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--primary-gold); margin: 5px 0;">Grand Palace Hall</p>
+        <p style="font-size: 12px; margin-bottom: 20px; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Marine Drive, Ernakulam, Kerala</p>
+        <a href="https://maps.google.com" target="_blank" class="btn">Get Directions</a>
     </section>
 
+    <!-- RSVP Section -->
     <section id="rsvp">
-        <div class="container">
-            <h2 class="section-title">Are You Attending?</h2>
-            <form id="whatsappForm">
-                <input type="text" id="guestName" placeholder="Your Full Name" required>
-                <select id="attendance" required>
-                    <option value="" disabled selected>Will you attend?</option>
-                    <option value="Accepts with Pleasure">Accepts with Pleasure</option>
-                    <option value="Declines with Regret">Declines with Regret</option>
-                </select>
-                <textarea id="guestWish" rows="2" placeholder="Leave a wish for the couple"></textarea>
-                <button type="submit" class="btn" style="border:none; cursor:pointer; width:100%;">Send RSVP</button>
-            </form>
+        <h2 class="section-title">Are You Attending?</h2>
+        <form id="whatsappForm">
+            <input type="text" id="guestName" placeholder="Your Full Name" required>
+            <select id="attendance" required>
+                <option value="" disabled selected>Will you attend?</option>
+                <option value="Accepts with Pleasure">Accepts with Pleasure</option>
+                <option value="Declines with Regret">Declines with Regret</option>
+            </select>
+            <textarea id="guestWish" rows="2" placeholder="Leave a wish for the couple"></textarea>
+            <button type="submit" class="btn">Send RSVP</button>
+        </form>
 
-            <div style="text-align: center; padding-top: 15px; margin-top: 12px; border-top: 1px solid var(--accent-border);">
-                <p style="font-family: 'Cormorant Garamond', serif; font-size: 11px; color: #f0f0f0; margin-bottom: 8px;">
-                    Digital Invitation Crafted with Love
-                </p>
-                <a href="https://www.instagram.com/yourday6881?stkn=NDk0bmR1cGM2MGMx&utm_source=qr" target="_blank" style="display: inline-flex; align-items: center; gap: 5px; text-decoration: none; background: var(--primary-gold); color: #ffffff; padding: 6px 14px; border-radius: 20px; font-size: 9px; font-weight: 500; letter-spacing: 1px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.198-.509.333-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.174-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 8 0zm0 1.44c2.135 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.843.38-1.096.046-3.232.046-2.135 0-2.388-.008-3.231-.048-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.135.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.843-.038 1.096-.047 3.232-.047V1.44zm0 3.652a2.908 2.908 0 1 0 0 5.816 2.908 2.908 0 0 0 0-5.816zm0 4.376a1.468 1.468 1 1 1 0-2.936 1.468 1.468 0 0 1 0 2.936zM12.43 4.095a1.04 1.04 0 1 0 0-2.08 1.04 1.04 0 0 0 0 2.08z"/>
-                    </svg>
-                    <span>Follow on Instagram</span>
-                </a>
-            </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; color: #f0f0f0; margin-bottom: 10px; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">
+                Digital Invitation Crafted with Love
+            </p>
+            <a href="https://www.instagram.com/yourday6881?stkn=NDk0bmR1cGM2MGMx&utm_source=qr" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none; background: var(--primary-gold); color: #ffffff; padding: 6px 16px; border-radius: 20px; font-size: 10px; font-weight: 500; letter-spacing: 1px;">
+                <span>Follow on Instagram</span>
+            </a>
         </div>
     </section>
 
@@ -605,6 +572,5 @@
             window.open(whatsappURL, '_blank');
         });
     </script>
-
 </body>
 </html>
